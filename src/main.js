@@ -51,6 +51,13 @@ var LoginPage = React.createClass({
   },
 
   render: function() {
+    let toolbarButton;
+
+    if (!ons.platform.isAndroid()) {
+      toolbarButton = <ToolbarButton onClick={this.signIn}>
+        <Icon icon={{default: 'ion-log-in'}} />
+      </ToolbarButton>;
+    }
     return (
        <div class="tile">
          <Page id="login"
@@ -58,9 +65,7 @@ var LoginPage = React.createClass({
              <Toolbar>
                <div className="center">Login</div>
                <div className="right">
-                 <ToolbarButton onClick={this.signIn}>
-                   <Icon icon={{default: 'ion-log-in', material: 'md-sign-in'}} />
-                 </ToolbarButton>
+                 {toolbarButton}
                </div>
              </Toolbar>
              }>

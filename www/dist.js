@@ -47729,8 +47729,15 @@ var LoginPage = _react2.default.createClass({
   },
 
   render: function render() {
-    var _this = this;
+    var toolbarButton = void 0;
 
+    if (!_onsenui2.default.platform.isAndroid()) {
+      toolbarButton = _react2.default.createElement(
+        _reactOnsenui.ToolbarButton,
+        { onClick: this.signIn },
+        _react2.default.createElement(_reactOnsenui.Icon, { icon: { default: 'ion-log-in' } })
+      );
+    }
     return _react2.default.createElement(
       'div',
       { 'class': 'tile' },
@@ -47749,11 +47756,7 @@ var LoginPage = _react2.default.createClass({
               _react2.default.createElement(
                 'div',
                 { className: 'right' },
-                _react2.default.createElement(
-                  _reactOnsenui.ToolbarButton,
-                  { onClick: _this.signIn },
-                  _react2.default.createElement(_reactOnsenui.Icon, { icon: { default: 'ion-log-in', material: 'md-sign-in' } })
-                )
+                toolbarButton
               )
             );
           } },
