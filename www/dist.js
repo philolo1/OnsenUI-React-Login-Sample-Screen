@@ -47763,7 +47763,7 @@ var LoginPage = _react2.default.createClass({
         _react2.default.createElement('img', { id: 'logo', src: 'img/logo_react.png' }),
         _react2.default.createElement(
           'div',
-          null,
+          { id: 'logoTitle' },
           _react2.default.createElement('img', { src: 'img/logo_title.png' })
         ),
         _react2.default.createElement(_reactOnsenui.Input, { value: this.state.email, onChange: this.emailChange, placeholder: 'Email', type: 'text', modifier: 'underbar', float: true }),
