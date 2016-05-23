@@ -51,6 +51,13 @@ var LoginPage = React.createClass({
   },
 
   render: function() {
+    let toolbarButton;
+
+    if (!ons.platform.isAndroid()) {
+      toolbarButton = <ToolbarButton onClick={this.signIn}>
+        <Icon icon={{default: 'ion-log-in'}} />
+      </ToolbarButton>;
+    }
     return (
        <div class="tile">
          <Page id="login"
@@ -58,17 +65,20 @@ var LoginPage = React.createClass({
              <Toolbar>
                <div className="center">Login</div>
                <div className="right">
-                 <ToolbarButton onClick={this.signIn}>
-                   <Icon icon={{default: 'ion-log-in', material: 'md-sign-in'}} />
-                 </ToolbarButton>
+                 {toolbarButton}
                </div>
              </Toolbar>
              }>
 
+             <img id='logo' src='img/logo_react.png' />
+             <div id='logoTitle'>
+               <img src='img/logo_title.png' />
+             </div>
+
            <Input value={this.state.email} onChange={this.emailChange} placeholder="Email" type="text" modifier="underbar" float />
            <Input value={this.state.password} onChange={this.passwordChange} placeholder="Password" type="password" modifier="underbar" float />
-           <Button onClick={this.signIn} modifier="large">Sign In</Button>
-           <Button onClick={this.forgotPassword} modifier="quiet">Forgot password?</Button>
+           <Button id='signIn' onClick={this.signIn} modifier="large">Sign In</Button>
+           <Button id='forgetBtn'  onClick={this.forgotPassword} modifier="quiet">FORGOT PASSWORD?</Button>
           </Page>
         </div>
     );
