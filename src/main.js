@@ -71,7 +71,7 @@ var LoginPage = React.createClass({
              }>
 
              <img id='logo' src='img/logo_react.png' />
-             <div>
+             <div id='logoTitle'>
                <img src='img/logo_title.png' />
              </div>
 
