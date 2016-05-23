@@ -47757,17 +47757,23 @@ var LoginPage = _react2.default.createClass({
               )
             );
           } },
+        _react2.default.createElement('img', { id: 'logo', src: 'img/logo_react.png' }),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('img', { src: 'img/logo_title.png' })
+        ),
         _react2.default.createElement(_reactOnsenui.Input, { value: this.state.email, onChange: this.emailChange, placeholder: 'Email', type: 'text', modifier: 'underbar', float: true }),
         _react2.default.createElement(_reactOnsenui.Input, { value: this.state.password, onChange: this.passwordChange, placeholder: 'Password', type: 'password', modifier: 'underbar', float: true }),
         _react2.default.createElement(
           _reactOnsenui.Button,
-          { onClick: this.signIn, modifier: 'large' },
+          { id: 'signIn', onClick: this.signIn, modifier: 'large' },
           'Sign In'
         ),
         _react2.default.createElement(
           _reactOnsenui.Button,
-          { onClick: this.forgotPassword, modifier: 'quiet' },
-          'Forgot password?'
+          { id: 'forgetBtn', onClick: this.forgotPassword, modifier: 'quiet' },
+          'FORGOT PASSWORD?'
         )
       )
     );

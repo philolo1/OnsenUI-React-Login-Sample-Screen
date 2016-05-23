@@ -65,10 +65,15 @@ var LoginPage = React.createClass({
              </Toolbar>
              }>
 
+             <img id='logo' src='img/logo_react.png' />
+             <div>
+               <img src='img/logo_title.png' />
+             </div>
+
            <Input value={this.state.email} onChange={this.emailChange} placeholder="Email" type="text" modifier="underbar" float />
            <Input value={this.state.password} onChange={this.passwordChange} placeholder="Password" type="password" modifier="underbar" float />
-           <Button onClick={this.signIn} modifier="large">Sign In</Button>
-           <Button onClick={this.forgotPassword} modifier="quiet">Forgot password?</Button>
+           <Button id='signIn' onClick={this.signIn} modifier="large">Sign In</Button>
+           <Button id='forgetBtn'  onClick={this.forgotPassword} modifier="quiet">FORGOT PASSWORD?</Button>
           </Page>
         </div>
     );
